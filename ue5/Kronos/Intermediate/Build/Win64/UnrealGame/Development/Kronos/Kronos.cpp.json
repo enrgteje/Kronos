@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\reily\\documents\\csci495\\kronos\\ue5\\kronos\\intermediate\\source\\kronos.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\reily\\documents\\csci495\\kronos\\ue5\\kronos\\intermediate\\build\\win64\\kronos\\development\\core\\sharedpch.core.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\reily\\documents\\csci495\\kronos\\ue5\\kronos\\intermediate\\build\\win64\\unrealgame\\development\\kronos\\definitions.kronos.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
