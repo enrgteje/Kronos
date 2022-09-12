@@ -5,6 +5,8 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 
+\graphicspath{{figures/}}
+
 %% UTM Colors
 \definecolor{UTMblue}{rgb}{0.043137, 0.137254, 0.254901}
 \definecolor{UTMorange}{rgb}{1.0, 0.509803, 0}
@@ -59,113 +61,160 @@
 
 
 \section{Introduction}
+
 \frameT{Motivation} {
-  \bigskip
   \begin{itemize}
     \item Paranautical Activity - A roguelike FPS with a low-poly art style
-      \bigskip
+    \medskip
+	\begin{center}
+		\includegraphics[scale=0.15]{paranautical_activity}
+	\end{center}	    
+      \smallskip
     \item Experimentation with VR technologies
-      \bigskip
+      \medskip
     \item Learning game design elements with Unreal Engine
   \end{itemize}
 }
 
-\frameT{Introduction} {
-	\begin{itemize}
-		\item Kronos is a VR FPS roguelike
-		\item Created using Unreal Engine 5
-		\item 4 different enemies types
-			\begin{itemize}
-				\item 2 bosses
-			\end{itemize}
-		\item 4 weapons
-		\item 6 items
-	\end{itemize}
-}
-
 \frameT{Story} {
 	\begin{itemize}
-		\item Someone has used a time machine as it was implicitly stated not to, by interacting with their previous self. This interaction has scrambled time via the butterfly effect.
-		\item Our character, Kronos, is traveling through time to return the timeline to its original order.
-		\item He has the ability to manipulate time by rewinding to a previous state. This proves beneficial when fighting the opponents he meets along the way.
+		\item Someone has broken the rules of time
+		\bigskip
+		\item Timeline is scrambled, up to Kronos to repair it
+		\bigskip
+		\item Kronos manipulates time to assist in restoring time
 	\end{itemize}
 }
 
-\frameT{Project Goals} {
-  Described what you are trying to accomplish, including ``stretch'' goals.
+\frameT{Technology} {
+	\begin{itemize}
+		\item Created using Unreal Engine 5
+		\bigskip
+		\item Programmed using Unreal's Blueprints
+		\bigskip
+		\item Programmed with C++ for complex features
+	\end{itemize}
 }
 
-\section{Sections--a useful organizational tool.}
+\frameT{Gameplay} {
+	\begin{itemize}
+		\item Kronos is a VR FPS roguelike
+		\item Each level is a different time period
+		\bigskip
+		\item Enemies and bosses will reflect the era of the level
+		\bigskip
+		\item Kronos is able to bring weapons across levels
+	\end{itemize}
+}
 
-\frameT{}{
+\frameT{Demonstration} {
+	\begin{center}
+		\includegraphics[scale=0.3]{demo}
+	\end{center}
+}
+
+\frameT{Feedback} {
+	\begin{itemize}
+		\item Any questions?
+		\bigskip
+		\item Project repo: https://github.com/enrgteje/Kronos
+	\end{itemize}
+	\bigskip
+	\bigskip
+	\centering
+	Contact us:
+		\begin{figure}[ht]
+    		\begin{minipage}[b]{0.4\linewidth}
+      			\centering
+      			enrgteje@ut.utm.edu
+      			github.com/enrgteje
+    		\end{minipage}
+    		\hspace{0.5cm}
+    		\begin{minipage}[b]{0.4\linewidth}
+      			\centering
+      			rstanfo1@ut.utm.edu
+      			github.com/reilys
+    		\end{minipage}
+  		\end{figure}
+	
 }
 
 
+%\frameT{Project Goals} {
+%  Described what you are trying to accomplish, including ``stretch'' goals.
+%}
 
-\begin{frame}[fragile]
-\frametitle{Family Tree Knowledge Base}
-Facts:
-\begin{verbatim}
-Verbatim is a great way of enumerating code/algorithmic ideas.
-\end{verbatim}
-\end{frame}
-
-
-\frameT{How to include images} {
-  %% \includegraphics[width=.7\linewidth]{figures/image.pdf}
-}
-
-
-\begin{frame}[fragile]
-  \frametitle{Social Network Graph}
-  \begin{figure}[ht]
-    \begin{minipage}[b]{0.53\linewidth}
-      \centering
-      Minipages are a great way to
-    \end{minipage}
-    \hspace{0.5cm}
-    \begin{minipage}[b]{0.4\linewidth}
-      \centering
-      Line up side-by-side content.
-
-    \end{minipage}
-  \end{figure}
-  
-\end{frame}
-
-
-\frameT{Results} {
-  Describe any results of your work here.
-
-  \bigskip
-
-  Things that worked?
-
-  \bigskip
-
-  Things that didn't work?
-}
-
-\frameT{Conclusions} {
-  Some bullet points here to wrap things up.
-}
-
-\frameT{Any Questions?} {
-  
-  \begin{center}
-    Questions?
-  \end{center}
-  \begin{center}
-    Comments?
-  \end{center}
-
-  \bigskip
-
-  Further project/author information:
-  \begin{center}
-    \includegraphics[width=4cm]{figures/6AnLddq.png}
-  \end{center}
-}
+%\section{Sections--a useful organizational tool.}
+%
+%\frameT{}{
+%}
+%
+%
+%
+%\begin{frame}[fragile]
+%\frametitle{Family Tree Knowledge Base}
+%Facts:
+%\begin{verbatim}
+%Verbatim is a great way of enumerating code/algorithmic ideas.
+%\end{verbatim}
+%\end{frame}
+%
+%
+%\frameT{How to include images} {
+%  %% \includegraphics[width=.7\linewidth]{figures/image.pdf}
+%}
+%
+%
+%\begin{frame}[fragile]
+%  \frametitle{Social Network Graph}
+%  \begin{figure}[ht]
+%    \begin{minipage}[b]{0.53\linewidth}
+%      \centering
+%      Minipages are a great way to
+%    \end{minipage}
+%    \hspace{0.5cm}
+%    \begin{minipage}[b]{0.4\linewidth}
+%      \centering
+%      Line up side-by-side content.
+%
+%    \end{minipage}
+%  \end{figure}
+%  
+%\end{frame}
+%
+%
+%\frameT{Results} {
+%  Describe any results of your work here.
+%
+%  \bigskip
+%
+%  Things that worked?
+%
+%  \bigskip
+%
+%  Things that didn't work?
+%}
+%
+%\frameT{Conclusions} {
+%  Some bullet points here to wrap things up.
+%}
+%
+%\frameT{Any Questions?} {
+%  
+%  \begin{center}
+%    Questions?
+%  \end{center}
+%  \begin{center}
+%    Comments?
+%  \end{center}
+%
+%  \bigskip
+%
+%  Further project/author information:
+%  \begin{center}
+%    \includegraphics[width=4cm]{6AnLddq.png}
+%  \end{center}
+%}
 
 %\frameF{fragile test} {
 %}
