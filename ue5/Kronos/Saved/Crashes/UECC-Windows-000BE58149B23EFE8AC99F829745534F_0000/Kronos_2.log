@@ -679,33 +679,3 @@ Recommended: 516.25
 [2022.09.15-02.54.31:125][976]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
 [2022.09.15-02.54.31:128][976]LogAudio: Display: Audio Device Manager Shutdown
 [2022.09.15-02.54.31:137][976]LogWindows: Windows GetLastError: The operation completed successfully. (0)
-[2022.09.15-02.54.32:090][976]LogOutputDevice: Warning: 
-
-Script Stack (0 frames):
-
-[2022.09.15-02.54.32:090][976]LogWindows: Windows GetLastError: The operation completed successfully. (0)
-[2022.09.15-02.54.32:090][976]LogWindows: Error: === Critical error: ===
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: Fatal error: [File:D:\build\++UE5\Sync\Engine\Source\Runtime\RenderCore\Private\RenderingThread.cpp] [Line: 934] 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: Rendering thread exception:
-[2022.09.15-02.54.32:090][976]LogWindows: Error: Assertion failed: IsInGameThread() [File:D:\build\++UE5\Sync\Engine\Source\Runtime\RenderCore\Private\RenderingThread.cpp] [Line: 1367] 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: [Callstack] 0x00007ffb0fc74fd9 KERNELBASE.dll!UnknownFunction []
-[2022.09.15-02.54.32:090][976]LogWindows: Error: [Callstack] 0x000000d0f738b6e0 UnknownFunction []
-[2022.09.15-02.54.32:090][976]LogWindows: Error: [Callstack] 0x000000d0f738c090 UnknownFunction []
-[2022.09.15-02.54.32:090][976]LogWindows: Error: [Callstack] 0x00007ffae24a0c40 UnrealEditor-ApplicationCore.dll!UnknownFunction []
-[2022.09.15-02.54.32:090][976]LogWindows: Error: [Callstack] 0x00000924da842d00 UnknownFunction []
-[2022.09.15-02.54.32:090][976]LogWindows: Error: [Callstack] 0x0000000000004000 UnknownFunction []
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:090][976]LogWindows: Error: 
-[2022.09.15-02.54.32:099][976]LogExit: Executing StaticShutdownAfterError
-[2022.09.15-02.54.32:101][976]LogWindows: FPlatformMisc::RequestExit(1)
-[2022.09.15-02.54.32:101][976]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 3)
-[2022.09.15-02.54.32:101][976]LogCore: Engine exit requested (reason: Win RequestExit; note: exit was already requested)
-[2022.09.15-02.54.32:113][976]Log file closed, 09/14/22 21:54:32
