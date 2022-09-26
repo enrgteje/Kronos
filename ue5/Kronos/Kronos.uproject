@@ -25,6 +25,10 @@
 				"Win64",
 				"Android"
 			]
+		},
+		{
+			"Name": "ProceduralDungeon",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [
