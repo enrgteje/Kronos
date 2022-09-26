@@ -57,6 +57,7 @@
 \usepackage{color}
 \usepackage{booktabs}
 \usepackage{textcomp}
+\usepackage{hyperref}
 
 % Some optional stuff you might like/need.
 \usepackage{microtype}        % Improved Tracking and Kerning
@@ -156,14 +157,11 @@
 
 
 \section{Introduction}
+Kronos is a virtual reality game that is set in the first person. The art style is similar to DOOM (1993) in that the enemies are sprites that always face you. The game is a shooter where you are tasked to bring the timeline to its original state. Someone has disrupted the chronological order of events leading Kronos, the protagonist, to fix the timeline by any means possible. There are three levels that each correspond to a time period where you can easily tell that time has been altered. This is apparent when you see enemies that do not match the current time period the level is set in. A mechanic that the game has is procedural generation of level layouts. The game offers three methods of movement: teleportation, head-based locomotion, and hand-based locomotion. With teleportation, you move by pointing your hand to a specific location and pressing the movement button. The other option, locomotion, moves like a standard video game in which you hold the movement button to move in your desired direction. Each level is concluded by defeating a boss enemy that is stronger than the enemies you have been fighting on the current floor. There will be multiple weapons, items that affect your player's stats, and a variety of enemies on each floor.
 
-This format is to be used for submissions that are published in the
-conference proceedings. We wish to give this volume a consistent,
-high-quality appearance. We therefore ask that authors follow some
-simple guidelines. You should format your paper exactly like this
-document. The easiest way to do this is to replace the content with
-your own material.  This document describes how to prepare your
-submissions using \LaTeX.
+\section{Technical Specifications}
+The project is built with Unreal Engine and we used Unreal's Blueprints, a visual programming language, to create the logic of the game. For complex functionality that cannot be built with Blueprints, we create with C++. We use a plugin called {\href{https://github.com/BenPyton/ProceduralDungeon}{ProceduralDungeon by BenPyton}} that places the rooms into a playable layout. To plan our roadmap we used {\href {https://milanote.com}{Milanote}}. The assets we have in our project come from {\href {https://humblebundle.com}{Humble Bundle}}, {\href {https://itch.io}{itch.io}}, and {\href {https://www.mixamo.com}{Mixamo}}.
+
 
 \section{Page Size and Columns}
 On each page your material should fit within a rectangle of 7 $\times$
