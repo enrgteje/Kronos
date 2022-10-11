@@ -1,0 +1,5 @@
+bibtex kronos_report
+pdflatex kronos_report.tex
+bibtex kronos_report
+pdflatex kronos_report.tex
+pdflatex kronos_report.tex
