@@ -29,6 +29,10 @@
 		{
 			"Name": "ProceduralDungeon",
 			"Enabled": true
+		},
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [
