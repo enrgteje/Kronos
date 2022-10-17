@@ -94,17 +94,51 @@
 		\medskip
 		\includegraphics[scale=0.22]{blueprint}
 		\smallskip
-		\item Programmed with C++ for complex features
+		\item Procedural Dungeon Plugin by BenPyton
 	\end{itemize}
+}
+
+\frameT{Procedural Generation} {
+	\begin{itemize}
+		\item The dungeon itself is built using room layouts
+		\begin{figure}
+			\centering
+			\includegraphics[scale=.08]{dungeon_room.png}
+		\end{figure}
+		\medskip
+		\item The room layouts are procedurally connected to provide a fluid start to finish dungeon
+		\begin{figure}
+			\centering
+			\includegraphics[scale=.075]{dungeon.png}
+		\end{figure}
+	\end{itemize}
+}
+
+\frameT{2D/3D Mashup} {
+	\begin{figure}[ht]
+		\begin{minipage}[b]{0.3\linewidth}
+    	\centering
+    			\includegraphics[scale=0.2]{2D.png}
+    	\end{minipage}
+    	\hspace{0.5cm}
+    	\begin{minipage}[b]{0.5\linewidth}
+      		\centering
+      		\begin{itemize}
+      			\item The world is crafted using 3D elements
+				\bigskip
+				\item The enemies and items are represented as 2D sprites to capture the feel of early game designs like Doom (1993)
+      		\end{itemize}
+    	\end{minipage}
+  	\end{figure}
 }
 
 \section{Details}
 
 \frameT{Gameplay} {
 	\begin{itemize}
-		\item Kronos is a VR FPS roguelike
-		\bigskip
 		\item Each level is a different time period
+		\bigskip
+		\item Kronos is sent to different eras to eradicate his flagged enemies
 		\bigskip
 		\item Enemies and bosses will reflect the era of the level
 		\bigskip
@@ -114,26 +148,26 @@
 
 \frameT{Demonstration} {
 	\begin{center}
-		\includegraphics[scale=0.3]{demo}
+		\includegraphics[scale=0.25]{demo}
 	\end{center}
 }
 
 \frameT{Trials and Tribulations} {
 	\begin{figure}[ht]
-    	\begin{minipage}[b]{0.3\linewidth}
-      		\centering
-      		\begin{itemize}
-      			\item Movement
-				\bigskip
-				\item Sprite Management
-				\bigskip
-				\item Dungeon Creating Plugin
-      		\end{itemize}
+		\begin{minipage}[b]{0.3\linewidth}
+    	\centering
+    			\includegraphics[scale=0.16]{sprite.png}
     	\end{minipage}
     	\hspace{0.5cm}
     	\begin{minipage}[b]{0.5\linewidth}
-    	\centering
-    			\includegraphics[scale=0.16]{sprite.png}
+      		\centering
+      		\begin{itemize}
+      			\item Locomotion Movement Implementation
+				\bigskip
+				\item Sprite Changing with the Different Actions
+				\bigskip
+				\item Understanding the Dungeon Creation Plugin with the Documentation Provided
+      		\end{itemize}
     	\end{minipage}
   	\end{figure}
 }
@@ -142,13 +176,11 @@
 
 \frameT{Future Work} {
 	\begin{itemize}
-		\item Creating more room layouts and floors
+		\item Creating more room layouts and floor
 		\bigskip
-		\item Adding verticality
+		\item AI creation and management using Behavior Trees
 		\bigskip
 		\item More enemies and bosses
-		\bigskip
-		\item Items
 	\end{itemize}
 }
 
