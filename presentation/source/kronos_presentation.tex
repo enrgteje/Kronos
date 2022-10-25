@@ -62,6 +62,18 @@
 
 \section{Introduction}
 
+\frameT{Terms} {
+	\begin{itemize}
+		\item Roguelike - Procedurally generated gameplay
+		\bigskip
+		\item FPS - First person shooter
+		\bigskip
+		\item Low-poly - Low number of polygons
+		\bigskip
+		\item VR - Virtual Reality
+	\end{itemize}
+}
+
 \frameT{Motivation} {
   \begin{itemize}
     \item Paranautical Activity - A roguelike FPS with a low-poly art style
@@ -83,7 +95,13 @@
 		\item Timeline is scrambled, up to Kronos to repair it
 		\bigskip
 		\item Kronos manipulates time to assist in restoring time
+		\bigskip
+		\item Apparent that time is off
+		\medskip
 	\end{itemize}
+	\begin{center}
+		\includegraphics[scale=0.3]{timeMessedUp}
+	\end{center}
 }
 
 \frameT{Technology} {
@@ -100,18 +118,28 @@
 
 \frameT{Procedural Generation} {
 	\begin{itemize}
-		\item The dungeon itself is built using room layouts
-		\begin{figure}
-			\centering
-			\includegraphics[scale=.08]{dungeon_room.png}
-		\end{figure}
-		\medskip
-		\item The room layouts are procedurally connected to provide a fluid start to finish dungeon
-		\begin{figure}
-			\centering
-			\includegraphics[scale=.075]{dungeon.png}
-		\end{figure}
+		\item The dungeon itself is built using levels
+		\bigskip
+		\item Plugin uses a depth first search algorithm
+		\bigskip
+		\item Plugin connects levels to each other dynamically
+		\bigskip
+		\item The levels are procedurally connected to provide a fluid start to finish dungeon
 	\end{itemize}
+}
+
+\frameT{Procedural Generation Continued} {
+	\begin{figure}
+		\centering
+		\includegraphics[scale=.09]{dungeon_room.png}
+		\caption{Top-down view of a single level}
+	\end{figure}
+	\medskip
+	\begin{figure}
+		\centering
+		\includegraphics[scale=.08]{dungeon.png}
+		\caption{A dungeon created by the plugin}
+	\end{figure}
 }
 
 \frameT{2D/3D Mashup} {
@@ -176,11 +204,11 @@
 
 \frameT{Future Work} {
 	\begin{itemize}
-		\item Creating more room layouts and floor
+		\item Create a new floor (possibly a modern era)
 		\bigskip
 		\item AI creation and management using Behavior Trees
 		\bigskip
-		\item More enemies and bosses
+		\item More enemies, bosses, and weapons
 	\end{itemize}
 }
 
