@@ -120,13 +120,13 @@
 
 \frameT{Procedural Generation} {
 	\begin{itemize}
-		\item The dungeon itself is built using levels
+		\item The dungeon itself is built using rooms
 		\bigskip
-		\item Plugin uses a depth first search algorithm
+		\item Plugin uses a depth-first search algorithm
 		\bigskip
-		\item Plugin connects levels to each other dynamically
+		\item Plugin connects rooms to each other dynamically
 		\bigskip
-		\item The levels are procedurally connected to provide a fluid start to finish dungeon
+		\item Rooms are procedurally connected to provide a fluid start to finish dungeon
 	\end{itemize}
 }
 
@@ -134,7 +134,7 @@
 	\begin{figure}
 		\centering
 		\includegraphics[scale=.09]{dungeon_room.png}
-		\caption{Top-down view of a single level}
+		\caption{Top-down view of a single room}
 	\end{figure}
 	\medskip
 	\begin{figure}
@@ -170,7 +170,7 @@
 		\bigskip
 		\item Kronos is sent to different eras to eradicate his flagged enemies
 		\bigskip
-		\item Environment and weapons will reflect the era of the level
+		\item Environment will reflect the era of the level
 		\bigskip
 		\item Consumable items that affect player stats
 	\end{itemize}
@@ -208,7 +208,7 @@
 	\begin{itemize}
 		\item Create a new floor (possibly a modern era)
 		\bigskip
-		\item AI creation and management using Behavior Trees
+		\item Further refinement of AI behavior
 		\bigskip
 		\item More enemies and bosses
 		\bigskip
