@@ -58,6 +58,9 @@
 \usepackage{booktabs}
 \usepackage{textcomp}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{capt-of}
+\usepackage{lipsum}
 
 % Some optional stuff you might like/need.
 \usepackage{microtype}        % Improved Tracking and Kerning
@@ -169,59 +172,72 @@ While we wanted to capture the feel of \textit{DOOM (1993)}, we felt that crafti
 
 \section{Story}
 The story of the game is that a large corporation has broken the rules of time and has resulted in the timeline falling apart. The corporation behind the incident specializes in time travel, their business allows people to time travel without altering any events to prevent ripples in time. The company has secretly been selling artifacts from the past on the black-market, which led to this catastrophic event since their actions snowballed out of control thanks to the butterfly effect. In response to the timeline collapsing, the protagonist of the game, Kronos, must restore it to its original state. Kronos is an intergalactic space cop tasked with resolving this issue by any means necessary. The player can directly see the effects of time distortion in each floor of the game.
-\begin{itemize}
-	\item [] {
-		\centering
-		\includegraphics[scale=0.4]{timeMessedUp.png}
-	}
-\end{itemize}
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{timeMessedUp.png}
+\captionof{figure}{In-game representation of time distortion.}
+    \label{fig:time-dist}
+\end{center}
 
 
 \section{Art Style}
-When creating our game, we wanted to try making something that felt similar to \textit{DOOM (1993)} and other games like it. This led to it featuring a mashup of a 2D and 3D art style. The world itself is crafting using 3D objects, but the enemies and items are represented as hand-crafted 2D sprites that always face the player. This creates an atmosphere like none other than we have experienced in a VR game. While our sprites don’t encompass what is seen in games like \textit{DOOM}, where the enemy sprites actually turn away from the player based on their movement, we feel that it created a different style that feels like an homage rather than a copy.
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.4]{2D.png}
-\end{figure}
+When creating our game, we wanted to try making something that felt similar to \textit{DOOM (1993)}, \textit{Paranautical Activity}, and other retro feeling games. This led to it featuring a mashup of a 2D and 3D art style. The world itself is crafting using 3D objects, but the enemies and items are represented as hand-crafted 2D sprites that always face the player. This creates an atmosphere like none other than we have experienced in a VR game. While our sprites don’t encompass what is seen in games like \textit{DOOM}, where the enemy sprites actually turn away from the player based on their movement, we feel that it created a different style that feels like an homage rather than a copy.
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{2D.png}
+\captionof{figure}{2D enemy and item sprites placed in the 3D world.}
+    \label{fig:2D}
+\end{center}
 
-\section{Mechanics}
-A primary mechanic that the game offers is procedural generation of level layouts. The game offers three methods of movement: head-based locomotion and hand-based locomotion. The locomotion moves like a standard video game in which you hold the movement button to move in your desired direction. Head-based locomotion uses the direction of where the player is facing in order to determine the direction of movement, while hand-based locomotion uses the direction of the left hand. Each level is concluded by defeating a boss enemy that is stronger than the enemies you have been fighting on the current floor. There will be multiple weapons, items that affect your player's stats, and a variety of enemies on each floor.
+\subsubsection*{Creating Sprites}
+Because we were unable to find any front-facing sprites on itch.io \cite{itch} or anywhere else, I created five of the six enemy sprites found in the game. I am not an artist so it was a challenge trying to make the sprites look presentable to some degree. My limited experience is evident when looking at the sprite and seeing choppy animation work. This is because I did not create many frames for each animation. 
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{sprite.png}
+\captionof{figure}{All of the enemy sprites that were handmade.}
+    \label{fig:Sprites}
+\end{center}
 
 \section{Technical Specifications}
 The project is built with Unreal Engine 5 \cite{unrealweb} and we used Unreal's Blueprints, a visual programming language, to create the logic of the game. We use a plugin called Procedural Dungeon Plugin \cite{dungeonplugin} that places the rooms into a playable layout. To plan our roadmap we used Milanote \cite{milanote}. The assets we have in our project come from Humble Bundle \cite{humble} and itch.io \cite{itch}. As for source control, we used Git LFS \cite{gitlfs}, which is used for large files on github, and the built-in source control for Unreal Engine.
 
-\section{Project Development}
-Throughout the development of Kronos, we have split responsibilities and tasks so that we were not both working on the same feature to maximize efficiency. This has led to the both of us having different experiences when  creating our game.
+\section{Overview of Mechanics}
+From the start of our project's lifespan, we wanted procedural generation because we wanted to construct a VR roguelike video game.  There are several different ways of handling procedural generation and we chose the procedural generation of level layouts.  Kronos offers two methods movement: head-based locomotion and hand-based locomotion. The locomotion moves like a standard video game in which you hold the movement button to move in your desired direction. Head-based locomotion uses the direction of where the player is facing in order to determine the direction of movement, while hand-based locomotion uses the direction of the left hand. The enemies' behavior (AI) was implemented by us using Unreal's Blueprints. Similar to most video games, each level is concluded by defeating a boss enemy that is stronger than the enemies you have been fighting on the current floor. There are multiple weapons, items that affect your player's stats,  background audio, and a variety of enemies on each floor.
 
-\subsection*{Reily's Experiences} One of the first things that I started messing with in Unreal Engine was adding models and proper collision to those models in the built-in example world in the engine. I quickly learned the basics for adding props to the world. I then decided to tackle my first real addition to our game, locomotion movement.
-\subsubsection*{Locomotion Movement} Unreal Engine’s built-in VRPawn object is created with a teleportation-style movement instead of the smooth movement you would expect from a standard 3D video game. Adding smooth locomotion to the game allowed me to learn a lot about the Blueprints scripting language. I was also able to learn about events, adding different elements to the viewport that aid with player location detection that aren’t visible to the player, and different custom collision descriptions. In the process of adding this, I ran into one major problem, collision. The default collision provided by Unreal led to the player being moved while holding an item due to the addition of smooth locomotion. Once the collision had been sorted, it was time to move to the next feature, enemies. 
-\subsubsection*{Enemies} Adding enemies allowed for me work with sprites and flipbooks to make an animation for our 2D enemies. It also gave me a chance to experiment with behavior trees to allow for the AI to function on its own. Prior to the decision to use behavior trees, I was creating the behavior entirely through Blueprints. This caused a lot of issues, especially when it came to handling animations. Occasionally, the enemy would change their sprite while another event would occur, stopping the enemy’s sprite from reflecting their current action. 
-\subsubsection*{Artificial Intelligence} Working on the AI was where a majority of my time was spent working on this project. I had to learn about the ins and outs of Behavior Trees in Unreal Engine. I started out by making an AI that could move randomly in a specified radius. This little introduction allowed me to learn about the little pieces that are needed to make an AI in Unreal. I had to learn about the Blackboard, which is an object that holds all the values, in variables, that a single instance of an AI needs to function. I also had to learn about AI Controllers, which is where you determine the Behavior Tree that needs to be run. It allowed me to attach senses to the enemies, so they could visually analyze their surroundings to look for the player. AI Controllers can also talk to the Blackboard to change values based on these senses that may be helpful for AI behaviors. Finally, we have the Behavior Trees. These look just like what you would see with regular trees in computer science. When working with the actual Behavior Trees, there are three main elements that I used: selectors, sequences, and tasks. Selectors run the first child node that does not fail to run properly. Sequences run each child node from left to right until one of them fails or all children have been executed, which stops the sequence and returns to its parent node. Tasks are the actual functionality of the AI. This includes things like attacking, finding the player location, moving, and more. All these pieces combine to make an AI that can make informed decisions based on its senses. Alongside enemies and AI, I worked on the creation of items. 
-\subsubsection*{Items} In order to create items, I had to think about all the pieces to make a working item. This included the objects that the player can collect, the spawning mechanism for the items, and the 2D sprites for the items. This allowed for me to learn about spawning objects in the game through the blueprints system. Not only that, but I was also able to learn about the randomness that Unreal can provide for random selection.
+\subsection*{Weapons}
+When we first decided to create a VR game, research was immediately started on how to import and use a low-poly weapon. It was overwhelming at first because we had never developed with any game engine, but it got easier as we read Epic's documentation on the subject. The hardest part of getting a weapon to work was finding a decent muzzle fire animation. The focus of our project changed immediately to prioritize building the base mechanics first like movement.
 
-\subsection*{Enrique's Experiences}
-When we first decided to create a VR game, I immediately began researching on how to import and use a low-poly weapon. It was overwhelming at first because I had never developed with any game engine, but it got easier as I read Epic's documentation on the subject. The hardest part of getting a weapon to work was finding a decent muzzle fire animation. I stopped creating weapons as soon as I built one so that I could focus on world design.
+\subsection*{Locomotion Movement}
+Unreal Engine’s built-in VRPawn object is created with a teleportation-style movement instead of the smooth movement you would expect from a standard 3D video game. Adding smooth locomotion to the game allowed us to learn a lot about the Blueprints scripting language. We were also able to learn about events, adding different elements to the viewport that aid with player location detection that are not visible to the player, and different custom collision descriptions. In the process of adding this, we ran into one major problem, collision. The default collision provided by Unreal led to the player being moved while holding an item due to the addition of smooth locomotion. Once the collision had been sorted, it was time to move to the next feature, enemies. 
+
 \subsubsection*{Procedural Generation}
 In order to make a rogue-like game, we needed Kronos to have procedural generation. We both wanted the generation of levels to be similar to how The Binding of Isaac's system works. This type of generation places levels together randomly until a valid dungeon is created. A valid dungeon is when there is a start level, an end level, and a number of levels that connect the start and end level together. Instead of creating a system that places the levels for us, I decided to search if Unreal had a built-in system for this. Unreal did not have a free plugin for what we needed, but I did find a free plugin on YouTube called Procedural Dungeon Plugin by BenPyton. This plugin had exactly what we were looking for. The plugin allowed you to set the minimum and maximum amount of levels between the start and finish since you would want to have a cap on the amount of rooms on a level, otherwise the plugin would be adding levels forever. Because this plugin is not provided by Unreal, it was difficult to get it working with our project since the plugin was built using a third person character, while Kronos uses a VR character. This was problematic since it was difficult trying to find out how to teleport the player to the generated level. In addition, the generated level were only showing the first two rooms so I spent hours trying to troubleshoot what was going wrong on my end. I checked the documentation, the Blueprint I modified, and the example game the plugin provides to compare Blueprints to see why I could only see the first two rooms. A day goes by and I decide to check the plugin's issues tab on GitHub and found a ticket that had a similar problem. The author of the plugin resolved their issue and I was able to fix mine by disabling a single setting called ''Occlusion Culling`` in the plugin's settings
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.12]{dungeon.png}
-\end{figure}
-.\subsubsection*{Weapons... Again}
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{dungeon.png}
+\captionof{figure}{A fully generated dungeon after the procedural dungeon plugin is finished running.}
+    \label{fig:Sprites}
+\end{center}
+
+\subsubsection*{Enemies} Adding enemies allowed for me work with sprites and flipbooks to make an animation for our 2D enemies. It also gave me a chance to experiment with behavior trees to allow for the AI to function on its own. Prior to the decision to use behavior trees, I was creating the behavior entirely through Blueprints. This caused a lot of issues, especially when it came to handling animations. Occasionally, the enemy would change their sprite while another event would occur, stopping the enemy’s sprite from reflecting their current action. 
+
+\subsubsection*{Artificial Intelligence} Working on the AI was where a majority of my time was spent working on this project. I had to learn about the ins and outs of Behavior Trees in Unreal Engine. I started out by making an AI that could move randomly in a specified radius. This little introduction allowed me to learn about the little pieces that are needed to make an AI in Unreal. I had to learn about the Blackboard, which is an object that holds all the values, in variables, that a single instance of an AI needs to function. I also had to learn about AI Controllers, which is where you determine the Behavior Tree that needs to be run. It allowed me to attach senses to the enemies, so they could visually analyze their surroundings to look for the player. AI Controllers can also talk to the Blackboard to change values based on these senses that may be helpful for AI behaviors. Finally, we have the Behavior Trees. These look just like what you would see with regular trees in computer science. When working with the actual Behavior Trees, there are three main elements that I used: selectors, sequences, and tasks. Selectors run the first child node that does not fail to run properly. Sequences run each child node from left to right until one of them fails or all children have been executed, which stops the sequence and returns to its parent node. Tasks are the actual functionality of the AI. This includes things like attacking, finding the player location, moving, and more. All these pieces combine to make an AI that can make informed decisions based on its senses. Alongside enemies and AI, I worked on the creation of items. 
+
+\subsubsection*{Items} In order to create items, I had to think about all the pieces to make a working item. This included the objects that the player can collect, the spawning mechanism for the items, and the 2D sprites for the items. This allowed for me to learn about spawning objects in the game through the blueprints system. Not only that, but I was also able to learn about the randomness that Unreal can provide for random selection.
+
+\subsubsection*{Weapons... Again}
 After creating two levels, I decided it was time to change my focus back to weapons. I had a lot of issues trying to allow the player to grab a weapon with both hands so we decided to only have one-handed weapons. This decision was made for the sake of time and trying to get the game to a playable state first.
+
 \subsubsection*{Audio}
 Importing and adding music to our Unreal project was surprisingly easy. We decided that we wanted a retro tone to our game so we used 16-bit music pack from Humble Bundle \cite{humble}. This was used for the background music to our levels. We also added footstep and gunshot sounds that also were from Humble \cite{humble}. We were unable to find an audio clip that could be used for our player taking damage so we did not incorporate it into our game. 
-\subsubsection*{Creating Sprites}
-Because we were unable to find any front-facing sprites on itch.io \cite{itch} or anywhere else, I created five of the six enemy sprites found in the game. I am not an artist so it was a challenge trying to make the sprites look presentable to some degree. My limited experience is evident when looking at the sprite and seeing choppy animation work. This is because I did not create many frames for each animation. 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.2]{sprite.png}
-\end{figure}
-
 
 \section{Trials and Tribulations}
+Throughout the creation of Kronos, we ran into some troubles that slowed down progression. 
+\subsection*{Locomotion Movement}
+Initially, getting the locomotion movement to work without issue was troublesome. This issue arose with making objects able to be grabbed. Grabbing lead to a dive through collision to understand how Unreal processed what should collide with what and what to do upon colliding. The most common issue we experienced with grabbing was the case where the player would grab an object, which would then collide with the player's collision detection, moving the player in the opposite direction of the held object. Luckily, this was able to be fixed after learning more about collision presets.
+\subsection*{Sprite Changing}
+Another problem we faced was sprite handling. As the enemies moved, attacked, took damage, and more, we wanted the sprite to update to represent this. Originally, we were creating our enemies through the Blueprint system alone. This meant that we were handling all sorts of events, and keeping up with what the enemy should be displaying. This wasn't a problem until multiple events fired at the same time. The firing of multiple events led to sprites not being updated or getting updated to the wrong sprite for the action. This was undesirable, so some research needed to be done. Since this was a niche style of enemy, there was not much help available for us in this regard. During our research though, we learned about behavior trees for AI and how to implement them. This allowed for us to put more of the work and thinking on the built-in AI system in Unreal instead of creating our own and essentially recreating the wheel. Using Behavior Trees also just happened to solve our sprite problems, so it ended up being majorly beneficial.
+\subsection*{Procedural Dungeon Plugin}
+There were several issues with using the procedural dungeon plugin, which is a third-party plugin. To begin with, the plugin was built using a first-person player and did not allow for a VRplayer pawn to be used as easy. This was troubling at first because our entire idea of Kronos was to create a VR roguelike and not a first-person shooter.After sorting that issue, our progress came to a halt once we realized that the player and enemy were unable to move in the generated dungeon.  This was due to the navigation mesh, which is what defines where a player and enemy can move to. The problem was that the navigation mesh did not rebuild itself when the dungeon was being generated. The resolution to this error was to enable a setting in the project's settings and allowed a dynamic navigation mesh.
 
 \section{Conclusions}
+At the end of the project, we are able to walk away with a lot of new knowledge. Over the course of development, we learned how to use Unreal Engine 5 and many of the features it offers. We learned more about visual scripting languages through Blueprints. We were able to experience world creation, AI behaviors, making sprites through pixel art, and much more. Overall, this has been a useful learning experience. Even if we don't make much use of these skills going forward in our careers, it will always be something can feel free to dabble with on our own time.
 
 \section{Future Work}
 As we move forward with the creation of Kronos, we have a couple of ideas in mind to flesh out. We would like to add a new floor, likely a modern era. With this, we would like to add more enemies and bosses to add variety to the enemies. Along with new enemies, we would want to refine our AI in order to create more intelligent behaviors to add depth to the gameplay. For example, implementing a cover system in which the AI looks for cover to hide behind while below 50\% health. We would also like to create more items and possibly ways to earn items to further support the ability to continue to play new playthroughs without the experience getting stale. Finally, incorporating a save system is something we wanted to implement from the beginning but couldn't because of difficulties introduced by the procedural dungeon plugin we chose to use. Adding a save system would be difficult to implement because the dungeon is generated at runtime and does not save the player's stats, enemies, player and enemies' locations, and more. At first we tried getting a save system to work, but due to deadlines, we focused our attention on getting to a playable state first.
